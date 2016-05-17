@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h2>Identities</h2>
+    <ul>
+        {% if identities %}
+            {% for identity in identities %}
+                <li>
+                    <a href="{{ url_for('profile', identity=identity) }}">
+                        {{ identity }}
+                    </a>
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h2>{{ identity }}</h2>
+    {% if messages %}
+        <h3>Messages</h3>
+        <table>
+            <tr>
+                <th>Prekey ID</th>
+                <th>Counter</th>
+                <th>Ratchet Key</th>
+                <th>Ciphertext</th>
+            </tr>
+            {% for message in messages %}
+                <tr>
+                    <td>{{ message.prekey_id }} </td>
+                    <td>{{ message.counter }} </td>
+                    <td>{{ message.ratchet_key }} </td>
+                    <td>{{ message.cipher_text }} </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+    {% if prekeys %}
+        <h3>Prekeys</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Public Key</th>
+            </tr>
+            {% for id, public_key in prekeys.items() %}
+                <tr>
+                    <td>{{ id }}</td>
+                    <td>{{ public_key }} </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}

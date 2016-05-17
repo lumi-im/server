@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lumi Router</title>
+    </head>
+    <body>
+        <h1>
+            <a href="{{ url_for('home') }}">Lumi Router</a>
+        </h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{ url_for('identities') }}">Identities</a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            {% block main %}
+            {% endblock %}
+        </main>
+    </body>
+</html>
